@@ -2,15 +2,11 @@
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
         ans=[]
-        x=nums.copy()
-        for i in nums:
-            x.remove(i)
-            #print(x)
-            #print(nums)
+        for i in range(len(nums)):
             c=0
-            for j in x:
-                if j<i:
+            e=nums[i]
+            for j in range(len(nums)):
+                if nums[j]<e:
                     c+=1
             ans.append(c)
-            x=nums.copy()
         return ans
