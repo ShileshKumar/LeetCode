@@ -17,17 +17,22 @@ class Solution:
             n+=1
 
         st=[]
-        ans=[0]*n
+        ans=[]
         
         for i in range(n-1,-1,-1):
-            while st and st[-1]<=a[i]:
-                st.pop()
-            if st:
-                ans[i]=st[-1]
-            else:
-                ans[i]=0
+            if len(st)==0:
+                ans.append(0)
+            elif len(st)!=0 and st[-1]>a[i]:
+                ans.append(st[-1])
+            elif len(st)!=0 and st[-1]<=a[i]:
+                while st and st[-1]<=a[i]:
+                    st.pop()
+                if st:
+                    ans.append(st[-1])
+                else:
+                    ans.append(0)
                 
             st.append(a[i])
             
-        return ans
+        return ans[::-1]
         
