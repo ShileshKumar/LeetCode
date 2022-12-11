@@ -9,7 +9,7 @@ class Solution:
         """
         while True:
 			# generate a random number from 1 ~ 49 with uniform distribution
-            random_num = (rand7()-1)* 7+rand7()
+            random_num = (rand7()-1)*7+rand7()
             
             # map 1 ~ 40 to 1 ~ 10 by modulo operation with offset
             if random_num<=40:
