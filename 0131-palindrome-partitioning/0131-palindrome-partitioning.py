@@ -1,7 +1,8 @@
 class Solution(object):
     @cache  # the memory trick can save some time
     def partition(self, s):
-        if not s: return [[]]
+        if not s: 
+            return [[]]
         ans = []
         for i in range(1, len(s) + 1):
             if s[:i] == s[:i][::-1]:  # prefix is a palindrome
