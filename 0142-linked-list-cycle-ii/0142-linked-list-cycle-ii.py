@@ -6,18 +6,15 @@
 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        slow=head
-        fast=head
+        slow=fast=head
         
-        while slow and fast and fast.next:
+        while slow!=None and fast!=None and slow.next!=None and fast.next!=None:
             slow=slow.next
             fast=fast.next.next
             
-            #if they meet in the loop
             if slow==fast:
-                slow=head #making slow pointer as head to start iterating from it inorder to find where the loop starts
+                slow=head
                 while slow!=fast:
                     slow=slow.next
                     fast=fast.next
                 return slow
-                
